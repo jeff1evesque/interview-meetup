@@ -1,0 +1,18 @@
+body {
+	margin:1em;
+	background:#eee;
+}
+
+.doc-box {
+	width:80%;
+	margin: 1em auto;
+}
+
+.dividedList li:first-child {
+	border-top:none;
+}
+
+.yes {
+	color:rgba(226, 55, 60, 1);
+	font-weight:bold;
+}
