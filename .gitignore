@@ -1,0 +1,6 @@
+# Ignore and don't commit the following directories
+
+# Ignore and don't commit the following files
+.DS_store
+*.swp
+*.swo
