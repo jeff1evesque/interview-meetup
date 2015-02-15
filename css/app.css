@@ -16,3 +16,20 @@ body {
 	color:rgba(226, 55, 60, 1);
 	font-weight:bold;
 }
+
+.figureset {
+	position:relative;
+}
+
+.figureset-button {
+	position:absolute;
+	top: 0; right:0;
+}
+
+.figureset-button .fa {
+	cursor:pointer;
+}
+
+.figureset-button .fa:hover {
+	color:#D62A2A;
+}
