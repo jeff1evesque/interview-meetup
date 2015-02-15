@@ -29,3 +29,7 @@ body {
 .figureset-button .fa {
 	cursor:pointer;
 }
+
+.figureset-button .fa:hover {
+	color:#D62A2A;
+}
