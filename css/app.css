@@ -16,3 +16,12 @@ body {
 	color:rgba(226, 55, 60, 1);
 	font-weight:bold;
 }
+
+.figureset {
+	position:relative;
+}
+
+.figureset-button {
+	position:absolute;
+	top: 0; right:0;
+}
