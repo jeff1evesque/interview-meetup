@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url: 'python/my-fave.py',
+      url: 'python/my_fave.py',
       data: $(this).attr('class'),
       beforeSend: function() {
 
