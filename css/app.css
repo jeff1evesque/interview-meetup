@@ -25,3 +25,7 @@ body {
 	position:absolute;
 	top: 0; right:0;
 }
+
+.figureset-button .fa {
+	cursor:pointer;
+}
