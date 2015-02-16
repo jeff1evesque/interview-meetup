@@ -22,7 +22,6 @@ def adjust_fave():
     # save fave
 
     # delete fave
-    pass
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
