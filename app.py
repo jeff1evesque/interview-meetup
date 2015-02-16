@@ -23,7 +23,7 @@ def adjust_fave():
     if 'fa-star-o' in fave_classes:
       return 'fave stored'
 
-    # delete fave
+    # remove fave
     elif 'fa-star' in fave_classes:
       return 'fave removed'
 
