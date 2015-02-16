@@ -16,12 +16,16 @@ def index():
 def adjust_fave():
   if request.method == 'POST':
     # get POST data
-    fave_classes = request.form.get('class')
+    fave_classes = request.form.get('class').split()
     fave_uid     = request.form.get('uid')
 
     # save fave
+    if 'fa-star-o' in fave_classes:
+      return 'fave stored'
 
     # delete fave
+    elif 'fa-star' in fave_classes:
+      return 'fave removed'
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
