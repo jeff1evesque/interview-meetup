@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url: 'python/my_fave.py',
+      url: '/my_fave/',
       data: data_send.serialize(),
       beforeSend: function() {
 
