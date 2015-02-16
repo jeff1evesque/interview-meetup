@@ -34,6 +34,8 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/spin.js/1.3.3/spin.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
 		<script src="static/js/app.js"></script>
+
+		{% raw %}
 		<script id="meetup-template" type="text/template">
 			<ul class="dividedList eventsList">
 				{{#results}}
@@ -58,6 +60,8 @@
 				{{/results}}
 			</ul>
 		</script>
+		{% endraw %}
+
 		<script src='static/js/toggle_favicon.js'></script>
 		<script src='static/js/ajax_data.js'></script>
     </body>
