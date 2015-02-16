@@ -7,7 +7,7 @@
 
 $(document).ready(function() {
 
-  $('.figureset-button fa').on('click', function(event) {
+  $(document).on('click', '.fave-button', function(event) {
     event.preventDefault();
 
   // create data array:
@@ -23,7 +23,6 @@ $(document).ready(function() {
 
       }
     }).done(function(data) {
-
     // remove ajax spinner
 
     // return result to DOM
