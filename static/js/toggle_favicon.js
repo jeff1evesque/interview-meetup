@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function() {
-  $('.fa').on('click', function(e) {
+  $(document).on('click', '.fave-button', function(e) {
     $(this).toggleClass('fa-star fa-star-o');
   });
 });
