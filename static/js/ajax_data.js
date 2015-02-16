@@ -16,7 +16,7 @@ $(document).ready(function() {
     $.ajax({
       type: 'POST',
       url: '/my_fave/',
-      data: data_send.serialize(),
+      data: JSON.stringify( data_send ),
       beforeSend: function() {
 
     // add ajax spinner
