@@ -1,6 +1,7 @@
 ## @app.py
 # This file loads corresponding logic, and html template file(s), which
 # allows the presentation of (asynchronous) content.
+import sys, json
 from flask import Flask, render_template, request
 
 # Initialize: create flask instance
@@ -15,6 +16,8 @@ def index():
 def adjust_fave():
   if request.method == 'POST':
     # get POST data
+    fave_classes = request.form.get('class')
+    fave_uid     = request.form.get('uid')
 
     # save fave
 
