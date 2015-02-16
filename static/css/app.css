@@ -26,10 +26,11 @@ body {
 	top: 0; right:0;
 }
 
-.figureset-button .fa {
+.figureset-button .fa-2 {
 	cursor:pointer;
+	font-size:1.5rem;
 }
 
-.figureset-button .fa:hover {
+.figureset-button .fa-2:hover {
 	color:#D62A2A;
 }
