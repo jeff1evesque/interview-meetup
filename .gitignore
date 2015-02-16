@@ -4,3 +4,5 @@
 .DS_store
 *.swp
 *.swo
+/package/*.pyc
+/package/database/*.pyc
