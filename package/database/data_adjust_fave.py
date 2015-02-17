@@ -34,9 +34,10 @@ class Adjust_Fave(object):
     # create 'tbl_fave_gid' if doesn't exist
     sql_statement = '''\
                     CREATE TABLE IF NOT EXISTS tbl_fave_gid (
-                      id_gid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                      id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                      gid INT NOT NULL,
                       uid_created INT NOT NULL,
-                      datetime_modified DATETIME NOT NULL,
+                      datetime_modified DATETIME NOT NULL
                     );
                     '''
     self.connector.sql_command( sql_statement, 'create' )
@@ -55,13 +56,15 @@ class Adjust_Fave(object):
     self.connector.sql_connect('db_my_faves')
 
     # insert 'fave' into 'tbl_fave_gid'
-    sql_statement = 'INSERT INTO tbl_fave_gid (id_gid, uid_created, datetime_modified) VALUES( %s, %s, UTC_TIMESTAMP() )'
+    sql_statement = 'INSERT INTO tbl_fave_gid (gid, uid_created, datetime_modified) VALUES( %s, %s, UTC_TIMESTAMP() )'
     args = (gid, uid)
     response = self.connector.sql_command( sql_statement, 'insert', args )
 
     # retrieve any error(s), end connection to sql
     if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
     self.connector.sql_disconnect()
+
+    print self.list_error
 
   ## db_fave_remove: remove user selected Meetup fave from database
   #
