@@ -3,6 +3,7 @@
 # allows the presentation of (asynchronous) content.
 from flask import Flask, render_template, request
 from package.database.data_adjust_fave import Adjust_Fave
+from package.database.data_retrieve import Get_Fave
 
 # Initialize: create flask instance
 app = Flask(__name__)
@@ -60,7 +61,8 @@ def get_fave():
       flag_proceed = False
 
     if flag_proceed:
-      return fave_intersection( fave_gid )
+      get_data = Get_Fave()
+      return get_data.fave_intersection( fave_gid )
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
