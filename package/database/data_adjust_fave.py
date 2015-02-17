@@ -74,7 +74,7 @@ class Adjust_Fave(object):
     self.connector.sql_connect('db_my_faves')
 
     # delete 'fave' from 'tbl_fave_gid'
-    sql_statement = 'DELETE FROM tbl_fave_gid WHERE id_gid=%s AND uid_created=%s'
+    sql_statement = 'DELETE FROM tbl_fave_gid WHERE gid=%s AND uid_created=%s'
     args = (gid, uid)
     response = self.connector.sql_command( sql_statement, 'delete', args )
 
