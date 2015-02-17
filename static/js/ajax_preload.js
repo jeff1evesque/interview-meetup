@@ -6,3 +6,16 @@
  *                  element is given the css classname 'fa-star', otherwise
  *                  the element will be given the css classname 'fa-star-o'.
  */
+
+$(document).ready(function() {
+
+// local variables
+  var event_meetup = new Array();
+
+  window.ajax_search.done(function(data) {
+    $.each($('.fave-button'), function() {
+      event_meetup.push( $(this).attr('id');
+    });
+  });
+
+});
