@@ -51,6 +51,7 @@ def get_fave():
   if request.method == 'POST':
     # get POST data
     meetup_events = request.form.get('events')
+    fave_uid      = request.form.get('uid')
 
     # remove 'gid-' prefix, convert each element to 'int' type
     try:
@@ -63,7 +64,7 @@ def get_fave():
     # return intersection between database, and current values
     if flag_proceed:
       get_fave = Get_Fave()
-      return get_fave.fave_intersection( fave_gid )
+      return get_fave.fave_intersection( meetup_events_processed, fave_uid )
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
