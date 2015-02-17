@@ -64,8 +64,6 @@ class Adjust_Fave(object):
     if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
     self.connector.sql_disconnect()
 
-    print self.list_error
-
   ## db_fave_remove: remove user selected Meetup fave from database
   #
   #  @gid, refers to the Meetup 'group_id'
