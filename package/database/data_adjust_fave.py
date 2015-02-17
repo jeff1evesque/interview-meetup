@@ -61,3 +61,14 @@ class Adjust_Fave(object):
   #  @gid, refers to the Meetup 'group_id'
   #  @uid, the 'user_id' associated with web-platform (i.e. CMS)
   def db_fave_remove(self, gid, uid):
+
+    # create connection to sql
+    self.connector.sql_connect()
+
+    # delete 'fave' from 'tbl_fave_gid'
+    sql_statement = 'DELETE FROM tbl_fave_gid WHERE id_gid=%s AND uid_created=%s'
+    response = sql.sql_command( sql_statement, 'delete' )
+
+    # retrieve any error(s), end connection to sql
+    if sql.return_error(): self.list_error.append( sql.return_error() )
+    self.connector.sql_disconnect()
