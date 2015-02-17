@@ -20,6 +20,8 @@ def my_fave():
     fave_gid     = request.form.get('gid')
     fave_uid     = request.form.get('uid')
 
+    data_update  = Adjust_Fave()
+
     # save fave
     if 'fa-star' in fave_classes:
       data_update.save_fave( {'uid': fave_uid, 'group_id': fave_gid} )
