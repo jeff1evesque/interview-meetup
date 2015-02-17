@@ -60,10 +60,10 @@ def get_fave():
       print error
       flag_proceed = False
 
-    # return favorite intersection
+    # return intersection between database, and current values
     if flag_proceed:
-      get_data = Get_Fave()
-      return get_data.fave_intersection( fave_gid )
+      get_fave = Get_Fave()
+      return get_fave.fave_intersection( fave_gid )
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
