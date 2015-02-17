@@ -7,6 +7,8 @@
  *                  the element will be given the css classname 'fa-star-o'.
  *
  * @window.ajax_search, a global 'deferred promise' defined from 'app.js'.
+ *
+ * @uid, corresponds the user who is currently logged-in to the application.
  */
 
 $(document).ready(function() {
