@@ -46,6 +46,11 @@ def my_fave():
           data_update.db_fave_remove( fave_gid, fave_uid )
           return 'fave removed'
 
+        # edge case
+        else: return 'cannot save, or remove Meetup event'
+
+    else: return 'Meetup \'group ids\' not properly formatted'
+
 @app.route('/get_fave/', methods=['POST', 'GET'])
 def get_fave():
   if request.method == 'POST':
@@ -65,6 +70,8 @@ def get_fave():
     if flag_proceed:
       get_fave = Get_Fave()
       return get_fave.fave_intersection( meetup_events_processed, fave_uid )
+
+    else: return 'Meetup \'group ids\' are properly formatted'
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
