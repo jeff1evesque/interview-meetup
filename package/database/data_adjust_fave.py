@@ -24,6 +24,13 @@ class Adjust_Fave(object):
     sql_statement = 'CREATE DATABASE IF NOT EXISTS db_my_faves CHARACTER SET utf8 COLLATE utf8_general_ci'
     self.connector.sql_command( sql_statement, 'create' )
 
+    # retrieve any error(s), end connection to sql
+    if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
+    self.connector.sql_disconnect()
+
+    # create connection to sql
+    self.connector.sql_connect('db_my_faves')
+
     # create 'tbl_fave_gid' if doesn't exist
     sql_statement = '''\
                     CREATE TABLE IF NOT EXISTS tbl_fave_gid (
@@ -45,7 +52,7 @@ class Adjust_Fave(object):
   def db_fave_add(self, gid, uid):
 
     # create connection to sql
-    self.connector.sql_connect()
+    self.connector.sql_connect('db_my_faves')
 
     # insert 'fave' into 'tbl_fave_gid'
     sql_statement = 'INSERT INTO tbl_fave_gid (id_gid, uid_created, datetime_modified) VALUES( %s, %s, UTC_TIMESTAMP() )'
@@ -63,7 +70,7 @@ class Adjust_Fave(object):
   def db_fave_remove(self, gid, uid):
 
     # create connection to sql
-    self.connector.sql_connect()
+    self.connector.sql_connect('db_my_faves')
 
     # delete 'fave' from 'tbl_fave_gid'
     sql_statement = 'DELETE FROM tbl_fave_gid WHERE id_gid=%s AND uid_created=%s'
