@@ -39,6 +39,9 @@ class Adjust_Fave(object):
     self.connector.sql_disconnect()
 
   ## db_fave_add: add user selected Meetup fave to database
+  #
+  #  @gid, refers to the Meetup 'group_id'
+  #  @uid, the 'user_id' associated with web-platform (i.e. CMS)
   def db_fave_add(self, gid, uid):
 
     # create connection to sql
