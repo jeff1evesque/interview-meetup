@@ -3,7 +3,7 @@
 # allows the presentation of (asynchronous) content.
 from flask import Flask, render_template, request
 from package.database.data_adjust_fave import Adjust_Fave
-from package.database.data_retrieve import Get_Fave
+from package.database.data_retriever import Get_Fave
 
 # Initialize: create flask instance
 app = Flask(__name__)
