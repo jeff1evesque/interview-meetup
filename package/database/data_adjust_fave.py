@@ -13,3 +13,16 @@ class Adjust_Fave(object):
   def __init__(self):
     self.list_error = []
     self.connector  = SQL()
+
+  ## db_initialize: creates the database, and tables
+  def db_initialize(self):
+
+    # create connection to sql
+    self.connector.sql_connect()
+
+    # create 'db_my_faves' database if doesn't exist
+    sql_statement = 'CREATE DATABASE IF NOT EXISTS db_my_faves CHARACTER SET utf8 COLLATE utf8_general_ci'
+    self.connector.sql_comand( sql_statement, 'create' )
+
+    # end connection to sql
+    self.connector.sql_disconnect()
