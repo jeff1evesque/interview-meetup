@@ -7,6 +7,8 @@
  *                  the element will be given the css classname 'fa-star-o'.
  *
  * @window.ajax_search, a global 'deferred promise' defined from 'app.js'.
+ *
+ * @uid, corresponds the user who is currently logged-in to the application.
  */
 
 $(document).ready(function() {
@@ -27,7 +29,7 @@ $(document).ready(function() {
       window.ajax_groupid = $.ajax({
         type: 'POST',
         url: '/get_fave/',
-        data: {events: event_meetup},
+        data: {events: event_meetup, uid: 0},
         beforeSend: function() {
 
         }
