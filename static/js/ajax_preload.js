@@ -5,6 +5,8 @@
  *                  If contained within the database, the 'fave_button'
  *                  element is given the css classname 'fa-star', otherwise
  *                  the element will be given the css classname 'fa-star-o'.
+ *
+ * @window.ajax_search, a global 'deferred promise' defined from 'app.js'.
  */
 
 $(document).ready(function() {
