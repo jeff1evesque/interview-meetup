@@ -11,7 +11,7 @@ $(document).ready(function() {
     event.preventDefault();
 
   // create data array:
-    var data_send = {class: $(this).attr('class'), uid: 0};
+    var data_send = {class: $(this).attr('class'), gid: $(this).attr('id'), uid: 0};
 
     $.ajax({
       type: 'POST',
