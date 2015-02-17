@@ -35,7 +35,7 @@ class Adjust_Fave(object):
     self.connector.sql_command( sql_statement, 'create' )
 
     # retrieve any error(s), end connection to sql
-    if sql.return_error(): self.list_error.append( sql.return_error() )
+    if self.connector.return_error(): self.list_error.append( sql.return_error() )
     self.connector.sql_disconnect()
 
   ## db_fave_add: add user selected Meetup fave to database
@@ -53,7 +53,7 @@ class Adjust_Fave(object):
     response = sql.sql_command( sql_statement, 'insert', args )
 
     # retrieve any error(s), end connection to sql
-    if sql.return_error(): self.list_error.append( sql.return_error() )
+    if self.connector.return_error(): self.list_error.append( sql.return_error() )
     self.connector.sql_disconnect()
 
   ## db_fave_remove: remove user selected Meetup fave from database
@@ -70,5 +70,5 @@ class Adjust_Fave(object):
     response = sql.sql_command( sql_statement, 'delete' )
 
     # retrieve any error(s), end connection to sql
-    if sql.return_error(): self.list_error.append( sql.return_error() )
+    if self.connector.return_error(): self.list_error.append( sql.return_error() )
     self.connector.sql_disconnect()
