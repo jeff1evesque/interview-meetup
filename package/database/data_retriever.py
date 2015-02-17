@@ -12,3 +12,8 @@ class Get_Fave(object):
   def __init__(self):
     self.list_error = []
     self.connector  = SQL()
+
+  ## fave_intersection: given list of events (group ids), return the
+  #                     intersection with stored favorite events with
+  #                     respect to current user (uid).
+  def fave_intersection( list_events, uid ):
