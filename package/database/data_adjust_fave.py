@@ -24,5 +24,16 @@ class Adjust_Fave(object):
     sql_statement = 'CREATE DATABASE IF NOT EXISTS db_my_faves CHARACTER SET utf8 COLLATE utf8_general_ci'
     self.connector.sql_command( sql_statement, 'create' )
 
+    # create 'tbl_fave_entity' if doesn't exist
+    sql_statement = '''\
+                    CREATE TABLE IF NOT EXISTS tbl_dataset_entity (
+                      id_entity INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                      uid_created INT NOT NULL,
+                      datetime_created DATETIME NOT NULL,
+                      uid_modified INT NULL,
+                      datetime_modified DATETIME NULL
+                    );
+    self.connector.sql_command( sql_statement, 'create' )
+
     # end connection to sql
     self.connector.sql_disconnect()
