@@ -21,12 +21,12 @@ def adjust_fave():
 
     # save fave
     if 'fa-star-o' in fave_classes:
-      data_update.save_fave()
+      data_update.save_fave( {'uid': fave_uid, 'group_id': fave_id} )
       return 'fave stored'
 
     # remove fave
     elif 'fa-star' in fave_classes:
-      data_update.remove_fave()
+      data_update.remove_fave( {'uid': fave_uid, 'group_id': fave_id} )
       return 'fave removed'
 
 # Execute: run application directly, instead of import
