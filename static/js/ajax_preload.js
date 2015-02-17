@@ -26,7 +26,7 @@ $(document).ready(function() {
     if ( event_meetup.length > 0 ) {
       window.ajax_groupid = $.ajax({
         type: 'POST',
-        url: '/get_fave',
+        url: '/get_fave/',
         data: event_meetup,
         beforeSend: function() {
 
