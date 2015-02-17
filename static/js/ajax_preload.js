@@ -27,7 +27,7 @@ $(document).ready(function() {
       window.ajax_groupid = $.ajax({
         type: 'POST',
         url: '/get_fave/',
-        data: {events: event_meetup},
+        data: {events: event_meetup, uid: 0},
         beforeSend: function() {
 
         }
