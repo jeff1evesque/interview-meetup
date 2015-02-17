@@ -34,7 +34,7 @@ class Get_Fave(object):
         list_intersection.append( response['result'] )
 
       # retrieve any error(s), end connection to sql
-      if self.connector.return_error(): self.list_error.append( self.connector.return_er$
+      if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
       self.connector.sql_disconnect()
 
     # return list of intersections
