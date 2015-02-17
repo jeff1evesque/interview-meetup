@@ -21,10 +21,12 @@ def adjust_fave():
 
     # save fave
     if 'fa-star-o' in fave_classes:
+      data_update.save_fave()
       return 'fave stored'
 
     # remove fave
     elif 'fa-star' in fave_classes:
+      data_update.remove_fave()
       return 'fave removed'
 
 # Execute: run application directly, instead of import
