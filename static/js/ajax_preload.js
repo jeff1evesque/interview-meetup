@@ -19,7 +19,7 @@ $(document).ready(function() {
 
   // get all current Meetup 'group ids'
     $.each($('.fave-button'), function() {
-      event_meetup.push( $(this).attr('id');
+      event_meetup.push( $(this).attr('id') );
     });
 
   // intersection between 'group ids', with previously selected
