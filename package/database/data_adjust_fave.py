@@ -12,3 +12,4 @@ class Adjust_Fave(object):
   ## constructor
   def __init__(self):
     self.list_error = []
+    self.connector  = SQL()
