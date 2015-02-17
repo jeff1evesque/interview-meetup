@@ -35,7 +35,7 @@ class Adjust_Fave(object):
     self.connector.sql_command( sql_statement, 'create' )
 
     # retrieve any error(s), end connection to sql
-    if sql.return_error(): self.list_error.append( sql.return_error() )
+    if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
     self.connector.sql_disconnect()
 
   ## db_fave_add: add user selected Meetup fave to database
@@ -50,10 +50,10 @@ class Adjust_Fave(object):
     # insert 'fave' into 'tbl_fave_gid'
     sql_statement = 'INSERT INTO tbl_fave_gid (id_gid, uid_created, datetime_modified) VALUES( %s, %s, UTC_TIMESTAMP() )'
     args = (gid, uid)
-    response = sql.sql_command( sql_statement, 'insert', args )
+    response = self.connector.sql_command( sql_statement, 'insert', args )
 
     # retrieve any error(s), end connection to sql
-    if sql.return_error(): self.list_error.append( sql.return_error() )
+    if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
     self.connector.sql_disconnect()
 
   ## db_fave_remove: remove user selected Meetup fave from database
@@ -67,8 +67,8 @@ class Adjust_Fave(object):
 
     # delete 'fave' from 'tbl_fave_gid'
     sql_statement = 'DELETE FROM tbl_fave_gid WHERE id_gid=%s AND uid_created=%s'
-    response = sql.sql_command( sql_statement, 'delete' )
+    response = self.connector.sql_command( sql_statement, 'delete' )
 
     # retrieve any error(s), end connection to sql
-    if sql.return_error(): self.list_error.append( sql.return_error() )
+    if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
     self.connector.sql_disconnect()
