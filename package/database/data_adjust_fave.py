@@ -67,7 +67,8 @@ class Adjust_Fave(object):
 
     # delete 'fave' from 'tbl_fave_gid'
     sql_statement = 'DELETE FROM tbl_fave_gid WHERE id_gid=%s AND uid_created=%s'
-    response = self.connector.sql_command( sql_statement, 'delete' )
+    args = (gid, uid)
+    response = self.connector.sql_command( sql_statement, 'delete', args )
 
     # retrieve any error(s), end connection to sql
     if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
