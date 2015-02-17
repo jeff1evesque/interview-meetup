@@ -41,7 +41,7 @@ $(document).ready(function() {
 
   // toggle 'fave-button' css classes based on intersection
     if ( typeof class_intersection !== 'undefined' ) {
-      $.each(class_intersection), function( index, value ) {
+      $.each(class_intersection, function( index, value ) {
         $('#gid-' + value).addClass('fa-star');
         $('#gid-' + value).removeClass('fa-star-o');
       });
