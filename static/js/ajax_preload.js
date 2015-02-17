@@ -32,7 +32,7 @@ $(document).ready(function() {
 
         }
       }).done(function(data) {
-
+        var class_intersection = data.class_intersection;
       }).fail(function(data) {
         console.log('Error Thrown: '+errorThrown);
         console.log('Error Status: '+textStatus);
