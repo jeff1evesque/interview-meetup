@@ -22,7 +22,7 @@ class Adjust_Fave(object):
 
     # create 'db_my_faves' database if doesn't exist
     sql_statement = 'CREATE DATABASE IF NOT EXISTS db_my_faves CHARACTER SET utf8 COLLATE utf8_general_ci'
-    self.connector.sql_comand( sql_statement, 'create' )
+    self.connector.sql_command( sql_statement, 'create' )
 
     # end connection to sql
     self.connector.sql_disconnect()
