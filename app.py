@@ -27,12 +27,12 @@ def my_fave():
 
     # save fave
     if 'fa-star' in fave_classes:
-      data_update.db_fave_add( {'uid': fave_uid, 'group_id': fave_gid} )
+      data_update.db_fave_add( fave_gid, fave_uid )
       return 'fave stored'
 
     # remove fave
     elif 'fa-star-o' in fave_classes:
-      data_update.db_fave_remove( {'uid': fave_uid, 'group_id': fave_gid} )
+      data_update.db_fave_remove( fave_gid, fave_uid )
       return 'fave removed'
 
 # Execute: run application directly, instead of import
