@@ -17,6 +17,7 @@ def adjust_fave():
   if request.method == 'POST':
     # get POST data
     fave_classes = request.form.get('class').split()
+    fave_gid     = request.form.get('gid')
     fave_uid     = request.form.get('uid')
 
     # save fave
