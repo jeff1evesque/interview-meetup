@@ -15,7 +15,8 @@
 
 		//spin.js -- http://fgnass.github.io/spin.js/
 		new Spinner(spinner_opts).spin($events[0]);
-	
+
+              // global 'deferred promise'
 		window.ajax_search = $.ajax({
 			url:"http://api.meetup.com/2/open_events/?callback=?",
 			data: {
