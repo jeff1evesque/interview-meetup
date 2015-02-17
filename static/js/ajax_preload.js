@@ -22,7 +22,7 @@ $(document).ready(function() {
       event_meetup.push( $(this).attr('id') );
     });
 
-  // intersection between 'group ids', with previously selected
+  // intersection between 'group ids', with previously selected (database)
     if ( event_meetup.length > 0 ) {
       window.ajax_groupid = $.ajax({
         type: 'POST',
