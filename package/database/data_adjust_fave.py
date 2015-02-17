@@ -56,7 +56,7 @@ class Adjust_Fave(object):
     self.connector.sql_connect('db_my_faves')
 
     # insert 'fave' into 'tbl_fave_gid'
-    sql_statement = 'INSERT INTO tbl_fave_gid (id_gid, uid_created, datetime_modified) VALUES( %s, %s, UTC_TIMESTAMP() )'
+    sql_statement = 'INSERT INTO tbl_fave_gid (gid, uid_created, datetime_modified) VALUES( %s, %s, UTC_TIMESTAMP() )'
     args = (gid, uid)
     response = self.connector.sql_command( sql_statement, 'insert', args )
 
