@@ -29,9 +29,7 @@ class Adjust_Fave(object):
                     CREATE TABLE IF NOT EXISTS tbl_dataset_entity (
                       id_entity INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                       uid_created INT NOT NULL,
-                      datetime_created DATETIME NOT NULL,
-                      uid_modified INT NULL,
-                      datetime_modified DATETIME NULL
+                      datetime_modified DATETIME NOT NULL,
                     );
     self.connector.sql_command( sql_statement, 'create' )
 
