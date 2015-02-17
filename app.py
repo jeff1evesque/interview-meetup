@@ -20,20 +20,30 @@ def my_fave():
     fave_gid     = request.form.get('gid')
     fave_uid     = request.form.get('uid')
 
-    data_update  = Adjust_Fave()
+    if fave_gid.startswith( 'gid-' ):
+      # get 'group id' integer value
+      try:
+        fave_gid = int(fave_gid[4:])
+        flag_proceed = True
+      except Exception, error:
+        print error
+        flag_proceed = False
 
-    # initialize database
-    data_update.db_initialize()
+      if flag_proceed:
+        data_update = Adjust_Fave()
 
-    # save fave
-    if 'fa-star' in fave_classes:
-      data_update.db_fave_add( fave_gid, fave_uid )
-      return 'fave stored'
+        # initialize database
+        data_update.db_initialize()
 
-    # remove fave
-    elif 'fa-star-o' in fave_classes:
-      data_update.db_fave_remove( fave_gid, fave_uid )
-      return 'fave removed'
+        # save fave
+        if 'fa-star' in fave_classes:
+          data_update.db_fave_add( fave_gid, fave_uid )
+          return 'fave stored'
+
+        # remove fave
+        elif 'fa-star-o' in fave_classes:
+          data_update.db_fave_remove( fave_gid, fave_uid )
+          return 'fave removed'
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
