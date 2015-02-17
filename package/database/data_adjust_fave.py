@@ -37,3 +37,9 @@ class Adjust_Fave(object):
     # retrieve any error(s), end connection to sql
     if sql.return_error(): self.list_error.append( sql.return_error() )
     self.connector.sql_disconnect()
+
+  ## db_fave_add: add user selected Meetup fave to database
+  def db_fave_add(self, gid, uid):
+
+    # create connection to sql
+    self.connector.sql_connect()
