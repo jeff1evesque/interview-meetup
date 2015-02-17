@@ -34,5 +34,6 @@ class Adjust_Fave(object):
                     '''
     self.connector.sql_command( sql_statement, 'create' )
 
-    # end connection to sql
+    # retrieve any error(s), end connection to sql
+    if sql.return_error(): self.list_error.append( sql.return_error() )
     self.connector.sql_disconnect()
