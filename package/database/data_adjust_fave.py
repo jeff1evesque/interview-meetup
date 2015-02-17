@@ -34,7 +34,8 @@ class Adjust_Fave(object):
     # create 'tbl_fave_gid' if doesn't exist
     sql_statement = '''\
                     CREATE TABLE IF NOT EXISTS tbl_fave_gid (
-                      id_gid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                      id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                      gid INT NOT NULL,
                       uid_created INT NOT NULL,
                       datetime_modified DATETIME NOT NULL
                     );
