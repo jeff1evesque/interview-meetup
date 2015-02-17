@@ -45,6 +45,12 @@ def my_fave():
           data_update.db_fave_remove( fave_gid, fave_uid )
           return 'fave removed'
 
+@app.route('/get_fave/', methods=['POST', 'GET'])
+def get_fave():
+  if request.method == 'POST':
+    # get POST data
+    meetup_events = request.form.get('events')
+
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
   app.run(
