@@ -22,6 +22,9 @@ def my_fave():
 
     data_update  = Adjust_Fave()
 
+    # initialize database
+    data_update.db_initializer()
+
     # save fave
     if 'fa-star' in fave_classes:
       data_update.db_fave_add( {'uid': fave_uid, 'group_id': fave_gid} )
