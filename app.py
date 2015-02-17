@@ -21,12 +21,12 @@ def adjust_fave():
     fave_uid     = request.form.get('uid')
 
     # save fave
-    if 'fa-star-o' in fave_classes:
+    if 'fa-star' in fave_classes:
       data_update.save_fave( {'uid': fave_uid, 'group_id': fave_id} )
       return 'fave stored'
 
     # remove fave
-    elif 'fa-star' in fave_classes:
+    elif 'fa-star-o' in fave_classes:
       data_update.remove_fave( {'uid': fave_uid, 'group_id': fave_id} )
       return 'fave removed'
 
