@@ -13,7 +13,7 @@ def index():
   return render_template('index.html')
 
 @app.route('/my_fave/', methods=['POST', 'GET'])
-def adjust_fave():
+def my_fave():
   if request.method == 'POST':
     # get POST data
     fave_classes = request.form.get('class').split()
