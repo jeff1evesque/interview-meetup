@@ -60,6 +60,7 @@ def get_fave():
       print error
       flag_proceed = False
 
+    # return favorite intersection
     if flag_proceed:
       get_data = Get_Fave()
       return get_data.fave_intersection( fave_gid )
