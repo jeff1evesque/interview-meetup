@@ -51,6 +51,17 @@ def get_fave():
     # get POST data
     meetup_events = request.form.get('events')
 
+    # remove 'gid-' prefix, convert each element to 'int' type
+    try:
+      meetup_events_processed = [int(event.replace('gid-', '')) for event in meetup_events]
+      flag_proceed = True
+    except Exception, error:
+      print error
+      flag_proceed = False
+
+    if flag_proceed:
+      return fave_intersection( fave_gid )
+
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
   app.run(
