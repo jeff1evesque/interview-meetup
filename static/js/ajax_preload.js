@@ -34,7 +34,8 @@ $(document).ready(function() {
       }).done(function(data) {
 
       }).fail(function(data) {
-
+        console.log('Error Thrown: '+errorThrown);
+        console.log('Error Status: '+textStatus);
       });
     }
 
