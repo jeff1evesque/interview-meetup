@@ -14,10 +14,17 @@ $(document).ready(function() {
 // local variables
   var event_meetup = new Array();
 
+// implement global 'deferred promise'
   window.ajax_search.done(function(data) {
+
+  // get all current Meetup 'group ids'
     $.each($('.fave-button'), function() {
       event_meetup.push( $(this).attr('id');
     });
+
+  // intersection between 'group ids', with previously selected
+
+  // toggle 'fave-button' css classes based on intersection
   });
 
 });
