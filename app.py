@@ -2,6 +2,7 @@
 # This file loads corresponding logic, and html template file(s), which
 # allows the presentation of (asynchronous) content.
 from flask import Flask, render_template, request
+from package.database.data_adjust_fave import Adjust_Fave
 
 # Initialize: create flask instance
 app = Flask(__name__)
@@ -19,14 +20,19 @@ def my_fave():
     fave_gid     = request.form.get('gid')
     fave_uid     = request.form.get('uid')
 
+    data_update  = Adjust_Fave()
+
+    # initialize database
+    data_update.db_initialize()
+
     # save fave
     if 'fa-star' in fave_classes:
-      data_update.save_fave( {'uid': fave_uid, 'group_id': fave_gid} )
+      data_update.db_fave_add( {'uid': fave_uid, 'group_id': fave_gid} )
       return 'fave stored'
 
     # remove fave
     elif 'fa-star-o' in fave_classes:
-      data_update.remove_fave( {'uid': fave_uid, 'group_id': fave_gid} )
+      data_update.db_fave_remove( {'uid': fave_uid, 'group_id': fave_gid} )
       return 'fave removed'
 
 # Execute: run application directly, instead of import
