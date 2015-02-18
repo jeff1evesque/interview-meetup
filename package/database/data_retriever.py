@@ -30,6 +30,7 @@ class Get_Fave(object):
       args = (gid, uid)
       response = self.connector.sql_command( sql_statement, 'select', args )
 
+      # append favorite event(s) from database query
       if response:
         if response['result']:
           list_intersection.append( response['result'][0][0] )
