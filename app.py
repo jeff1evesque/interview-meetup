@@ -1,6 +1,7 @@
 ## @app.py
 # This file loads corresponding logic, and html template file(s), which
 # allows the presentation of (asynchronous) content.
+import json
 from flask import Flask, render_template, request
 from package.database.data_adjust_fave import Adjust_Fave
 from package.database.data_retriever import Get_Fave
@@ -55,7 +56,7 @@ def my_fave():
 def get_fave():
   if request.method == 'POST':
     # get POST data
-    meetup_events = request.form.get('events')
+    meetup_events = json.loads(request.form.get('events'))
     fave_uid      = request.form.get('uid')
 
     # remove 'gid-' prefix, convert each element to 'int' type
