@@ -38,19 +38,20 @@ $(document).ready(function() {
         }
       }).done(function(data) {
         var class_intersection = data.substring(1, data.length-1).split(', ');
+
+      // toggle 'fave-button' css classes based on intersection
+        if ( typeof class_intersection !== 'undefined' ) {
+          $.each(class_intersection, function( index, value ) {
+            $('#gid-' + value).addClass('fa-star');
+            $('#gid-' + value).removeClass('fa-star-o');
+          });
+        }
       }).fail(function(jqXHR, textStatus, errorThrown) {
         console.log('Error Thrown: '+errorThrown);
         console.log('Error Status: '+textStatus);
       });
     }
 
-  // toggle 'fave-button' css classes based on intersection
-    if ( typeof class_intersection !== 'undefined' ) {
-      $.each(class_intersection, function( index, value ) {
-        $('#gid-' + value).addClass('fa-star');
-        $('#gid-' + value).removeClass('fa-star-o');
-      });
-    }
   });
 
 });
