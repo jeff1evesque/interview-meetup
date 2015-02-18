@@ -30,7 +30,7 @@ class Get_Fave(object):
       args = (gid, uid)
       response = self.connector.sql_command( sql_statement, 'select', args )
 
-      if len(response['result']) > 0:
+      if response['result']:
         list_intersection.append( response['result'][0][0] )
 
       # retrieve any error(s)
