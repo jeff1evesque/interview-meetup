@@ -31,7 +31,7 @@ class Get_Fave(object):
       response = self.connector.sql_command( sql_statement, 'select', args )
 
       if len(response['result']) > 0:
-        list_intersection.append( response['result'] )
+        list_intersection.append( response['result'][0][0] )
 
       # retrieve any error(s)
       if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
