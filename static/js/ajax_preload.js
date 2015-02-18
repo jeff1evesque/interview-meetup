@@ -37,6 +37,7 @@ $(document).ready(function() {
 
         }
       }).done(function(data) {
+      // get previously stored 'favorites'
         var class_intersection = data.substring(1, data.length-1).split(', ');
 
       // toggle 'fave-button' css classes based on intersection
