@@ -24,12 +24,15 @@ $(document).ready(function() {
       event_meetup.push( $(this).attr('id') );
     });
 
+  // create data array
+    var data_send = {events: JSON.stringify( event_meetup ), uid: 0};
+
   // intersection between 'group ids', with previously selected (database)
     if ( event_meetup.length > 0 ) {
       window.ajax_groupid = $.ajax({
         type: 'POST',
         url: '/get_fave/',
-        data: {events: event_meetup, uid: 0},
+        data: data_send,
         beforeSend: function() {
 
         }
