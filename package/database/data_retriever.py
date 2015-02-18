@@ -16,7 +16,7 @@ class Get_Fave(object):
   ## fave_intersection: given list of events (group ids), return the
   #                     intersection with stored favorite events with
   #                     respect to current user (uid).
-  def fave_intersection( list_events, uid ):
+  def fave_intersection(self, list_events, uid):
 
     # local variables
     list_intersection = []
