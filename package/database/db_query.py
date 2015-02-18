@@ -48,7 +48,7 @@ class SQL(object):
         return { 'status': False, 'error': self.list_error, 'result': None }
 
       if sql_type in ['insert', 'delete', 'update']: return { 'status': False, 'error': self.list_error, 'id': self.cursor.lastrowid }
-      elif sql_type == 'select': return { 'status': False, 'error': self.list_error }
+      elif sql_type == 'select': return { 'status': False, 'error': self.list_error, 'result': result }
 
   ## sql_disconnect: close connection to MySQL / MariaDB
   def sql_disconnect(self):
