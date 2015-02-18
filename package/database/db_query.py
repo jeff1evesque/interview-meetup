@@ -45,7 +45,7 @@ class SQL(object):
       except DB.Error, error:
         self.conn.rollback()
         self.list_error.append(error)
-        return { 'status': True, 'error': self.list_error, 'result': None }
+        return { 'status': False, 'error': self.list_error, 'result': None }
 
       if sql_type in ['insert', 'delete', 'update']: return { 'status': False, 'error': self.list_error, 'id': self.cursor.lastrowid }
       elif sql_type == 'select': return { 'status': False, 'error': self.list_error }
