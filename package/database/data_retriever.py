@@ -43,3 +43,7 @@ class Get_Fave(object):
 
     # return list of intersections
     return list_intersection
+
+  ## get_db_error: return all error(s)
+  def get_db_error(self):
+    return self.list_error
