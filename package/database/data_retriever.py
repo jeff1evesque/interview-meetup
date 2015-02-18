@@ -38,9 +38,6 @@ class Get_Fave(object):
       # retrieve any error(s)
       if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
 
-    if not len(list_intersection) > 0:
-      list_intersection.append( None )
-
     # end connection to sql
     self.connector.sql_disconnect()
 
