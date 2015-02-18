@@ -37,7 +37,7 @@ $(document).ready(function() {
 
         }
       }).done(function(data) {
-        var class_intersection = data.class_intersection;
+        var class_intersection = data.substring(1, data.length-1).split(', ');
       }).fail(function(jqXHR, textStatus, errorThrown) {
         console.log('Error Thrown: '+errorThrown);
         console.log('Error Status: '+textStatus);
