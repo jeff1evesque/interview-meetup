@@ -81,3 +81,7 @@ class Adjust_Fave(object):
     # retrieve any error(s), end connection to sql
     if self.connector.return_error(): self.list_error.append( self.connector.return_error() )
     self.connector.sql_disconnect()
+
+  ## get_db_error: return all error(s)
+  def get_db_error(self):
+    return self.list_error
