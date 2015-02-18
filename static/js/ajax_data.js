@@ -10,7 +10,7 @@ $(document).ready(function() {
   $(document).on('click', '.fave-button', function(event) {
     event.preventDefault();
 
-  // create data array:
+  // create data array
     var data_send = {class: $(this).attr('class'), gid: $(this).attr('id'), uid: 0};
 
     $.ajax({
