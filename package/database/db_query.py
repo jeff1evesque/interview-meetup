@@ -39,14 +39,13 @@ class SQL(object):
         # commit change(s), return lastrowid
         if sql_type in ['insert', 'delete', 'update']:
           self.conn.commit()
-          return { 'status': True, 'error': None, 'id': self.cursor.lastrowid }
         # fetch all the rows, return as list of lists.
         elif sql_type == 'select':
           result = self.cursor.fetchall()
-          return { 'status': True, 'error': None, 'result': result }
       except DB.Error, error:
         self.conn.rollback()
         self.list_error.append(error)
+        return { 'status': True, 'error': self.list_error, 'result': None }
 
       if sql_type in ['insert', 'delete', 'update']: return { 'status': False, 'error': self.list_error, 'id': self.cursor.lastrowid }
       elif sql_type == 'select': return { 'status': False, 'error': self.list_error }
