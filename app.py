@@ -70,7 +70,8 @@ def get_fave():
     # return intersection between database, and current values
     if flag_proceed:
       get_fave = Get_Fave()
-      return get_fave.fave_intersection( meetup_events_processed, fave_uid )
+      intersection = get_fave.fave_intersection( meetup_events_processed, fave_uid )
+      if intersection: return json.dumps(intersection)
 
     else: return 'Meetup \'group ids\' are properly formatted'
 
