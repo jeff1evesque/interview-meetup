@@ -50,6 +50,10 @@ def my_fave():
         # edge case
         else: return 'cannot save, or remove Meetup event'
 
+        # print database related error(s)
+        print get_fave.get_db_error()
+
+
     else: return 'Meetup \'group ids\' not properly formatted'
 
 @app.route('/get_fave/', methods=['POST', 'GET'])
@@ -73,6 +77,9 @@ def get_fave():
       intersection = get_fave.fave_intersection( meetup_events_processed, fave_uid )
       if intersection: return json.dumps(intersection)
       else: return 'Current Meetup events do not intersect users stored favorite(s)'
+
+      # print database related error(s)
+      print get_fave.get_db_error()
 
     else: return 'Meetup \'group ids\' are properly formatted'
 
