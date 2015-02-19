@@ -1,51 +1,80 @@
-Full Stack Demo Project
-=======================
+interview-meetup
+================
 
-Greetings, full-stack traveler.
+A coding [exercise](https://github.com/jeff1evesque/interview-meetup/blob/master/data/exercise.md) was given to me when I interviewed for a *Software Engineer* (Tools) position at [Meetup](http://meetup.com/).  Using the supplied [starter-package](https://github.com/jeff1evesque/interview-meetup/releases/tag/0.1), and Meetup API, the exercise was restricted to 3 hours.
 
-This bundle includes a static HTML, browser-based app that searches
-for upcoming Meetups using the Meetup API's [Open Events][events]
-method. Open `index.html` in a web browser to try for yourself!
+This repository provides three [releases](https://github.com/jeff1evesque/interview-meetup/releases):
 
-It also uses our locally-grown CSS framework, [Sassquatch][sassquatch].
+- Original Starter Package (0.1)
+- Submitted Code (1.0)
+- Working Code (2.0)
 
-Favorite Quest
---------------
+**Note:** the exercise markdown can be found in the [`data/`](https://github.com/jeff1evesque/interview-meetup/blob/master/data/) subdirectory.
 
-The starter project is pretty good for finding Meetups, but its name
-hints at broader aspirations. We'd like you to help *Meetup Faves*
-live up to that name.
+## Installation
 
-With the software stack of your choice, implement a feature to record
-selected Meetups as the user's favorites. You may want to use empty
-and filled (☆ ★) stars to indicate their status.
+###Linux Packages
 
-The favorite status should be persisted to a data store *outside* the
-browser. Providing a favorites web API and toggling event statuses
-with Ajax seems like a pretty good idea to us, but, it's your project.
+The following packages are needed to be installed:
 
-Additionally, your users may want to list all their favorite Meetups
-without having to find them through text search results. You could
-treat "favorites" as a special kind of search, for example.
+```
+# General Packages:
+sudo apt-get install python-pip
+sudo pip install Flask
+sudo pip install requests
+sudo pip install jsonschema
+```
 
-Whose favorites?
-----------------
+**Note:** This project assumes [Ubuntu Server 14.04](http://www.ubuntu.com/download/server) as the operating system. If another system is preferred, simply download the above requirements, with respect to the systems *package manager* equivalent.
 
-For this project you may assume that all users will have their own
-application and data store instance, or that all users will be happy
-to share the same set of favorites. Or you could use a stack's built
-in user account management. It's really up to you! (We just want to
-see your code.)
+## Configuration
 
-Turning in the test
--------------------
+###GIT
 
-Your time is valuable -- so we'd like you to spend **no more than 3
-hours** on this project. When you're at a good stopping point, zip it
-up and e-mail it back along with a URL to where your test is running, 
-or an easy way to provision it (vagrant, etc).
+Fork this project in your GitHub account, then clone your repository:
 
-Thanks, and good luck!
+```
+cd /var/www/html/
+sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/interview-meetup.git
+```
 
-[events]: http://www.meetup.com/meetup_api/docs/2/open_events/
-[sassquatch]: http://meetup.github.io/sassquatch/
+Then, change the *file permissions* for the entire project by issuing the command:
+
+```
+cd /var/www/html/
+sudo chown -R jeffrey:www-data interview-meetup
+```
+
+**Note:** change 'jeffrey' to the user account YOU use.
+
+Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
+
+```
+cd /var/www/html/interview-vimeo/
+git remote add upstream https://github.com/[YOUR-USERNAME]/interview-meetup.git
+```
+
+####GIT Submodule
+
+We need to initialize our git *submodules*:
+
+```
+sudo git submodule init
+sudo git submodule update
+```
+
+The above two commands will update submodules within the cloned repository, according to the versioned master branch. If they are already initialized in the cloned repository, then the latter command will suffice.
+
+The following updates submodule(s):
+
+```
+cd /var/www/htmls/interview-meetup/
+git checkout -b NEW_BRANCH master
+cd [YOUR_SUBMODULE]/
+git checkout master
+git pull
+cd ../
+git status
+```
+
+to the latest code-base, within the cloned repository branch, `NEW_BRANCH`.
