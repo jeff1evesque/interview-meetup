@@ -1,7 +1,9 @@
 interview-meetup
 ================
 
-A coding [exercise](https://github.com/jeff1evesque/interview-meetup/blob/master/data/exercise.md) was given to me when I interviewed for a *Software Engineer* (Tools) position at [Meetup](http://meetup.com/).  Using the supplied [starter-package](https://github.com/jeff1evesque/interview-meetup/releases/tag/0.1), and Meetup API, the exercise was restricted to 3 hours. This repository contains the three [releases](https://github.com/jeff1evesque/interview-meetup/releases):
+A coding [exercise](https://github.com/jeff1evesque/interview-meetup/blob/master/data/exercise.md) was given to me when I interviewed for a *Software Engineer* (Tools) position at [Meetup](http://meetup.com/).  Using the supplied [starter-package](https://github.com/jeff1evesque/interview-meetup/releases/tag/0.1), and Meetup API, the exercise was restricted to 3 hours.
+
+This repository provides three [releases](https://github.com/jeff1evesque/interview-meetup/releases):
 
 - Original Starter Package (0.1)
 - Submitted Code (1.0)
