@@ -54,27 +54,25 @@ cd /var/www/html/interview-meetup/
 git remote add upstream https://github.com/[YOUR-USERNAME]/interview-meetup.git
 ```
 
-####GIT Submodule
+###Flask
 
-We need to initialize our git *submodules*:
+Python's [Flask](http://flask.pocoo.org/), is a microframework based on [Werkzeug](http://werkzeug.pocoo.org/).  Specifically, it is a [web framework](http://en.wikipedia.org/wiki/Web_application_framework), which includes, a development server, integrated support for [unit testing](http://en.wikipedia.org/wiki/Unit_testing), [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) API, and [Jinja2](http://jinja.pocoo.org/) templating.
 
-```
-sudo git submodule init
-sudo git submodule update
-```
-
-The above two commands will update submodules within the cloned repository, according to the versioned master branch. If they are already initialized in the cloned repository, then the latter command will suffice.
-
-The following updates submodule(s):
+This project implements flask, by requiring [`app.py`](https://github.com/jeff1evesque/interview-meetup/blob/master/app.py) to be running:
 
 ```
-cd /var/www/htmls/interview-meetup/
-git checkout -b NEW_BRANCH master
-cd [YOUR_SUBMODULE]/
-git checkout master
-git pull
-cd ../
-git status
+cd /var/www/html/interview-meetup/
+python app.py
 ```
 
-to the latest code-base, within the cloned repository branch, `NEW_BRANCH`.
+**Note:** the [`run()`](http://flask.pocoo.org/docs/0.10/api/#flask.Flask.run) method within `app.py`, runs the local developement server, and has the ability of defining the host, port, debug feature, and several other options. If none of these attributes are passed into the method, the server will default to running `localhost` on port `5000`, with no [`debug`](http://flask.pocoo.org/docs/0.10/quickstart/#debug-mode) features enabled.
+
+**Note:** when running the above `app.py`, ensure that the terminal window is not used for any other processes, while the web application is available to others.
+
+##Execution
+
+Once `app.py` is running on a dedicated terminal window, this application can be accessed via any web-browser:
+
+```
+http://localhost:5000/
+```
