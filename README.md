@@ -54,27 +54,3 @@ cd /var/www/html/interview-meetup/
 git remote add upstream https://github.com/[YOUR-USERNAME]/interview-meetup.git
 ```
 
-####GIT Submodule
-
-We need to initialize our git *submodules*:
-
-```
-sudo git submodule init
-sudo git submodule update
-```
-
-The above two commands will update submodules within the cloned repository, according to the versioned master branch. If they are already initialized in the cloned repository, then the latter command will suffice.
-
-The following updates submodule(s):
-
-```
-cd /var/www/htmls/interview-meetup/
-git checkout -b NEW_BRANCH master
-cd [YOUR_SUBMODULE]/
-git checkout master
-git pull
-cd ../
-git status
-```
-
-to the latest code-base, within the cloned repository branch, `NEW_BRANCH`.
