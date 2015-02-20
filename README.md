@@ -71,7 +71,7 @@ python app.py
 
 ##Execution
 
-Once `app.py` is running on a dedicated terminal window, this application can be accessed via web-browser:
+Once `app.py` is running on a dedicated terminal window, this application can be accessed via any web-browser:
 
 ```
 http://localhost:5000/
